@@ -22,8 +22,19 @@
                   </p>
                 </div>
                 <div class="">
-
+                  <star-rating v-bind="{rating: number, starStyle:starStyle}"></star-rating>
                 </div>
+                <div class="">
+                  <star-rating v-bind="{rating: 2.1, starStyle:starStyle}"></star-rating>
+                </div>
+                <div class="">
+                  <star-rating v-bind="{rating: 1.1, starStyle:starStyle}"></star-rating>
+                </div>
+                <div class="">
+                  <star-rating :config="config"></star-rating>
+                </div>
+                <input v-model="test" type="number">
+                {{number}}
               </div>
             </div>
           </article>
@@ -38,11 +49,38 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import StarRating from 'vue-dynamic-star-rating'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+    StarRating
+  },
+  data: function() {
+    return {
+      test: 0,
+      starStyle: {
+        fullStarColor: "#ed8a19",
+        emptyStarColor: "#737373",
+        starWidth: 20,
+        starHeight: 20
+      },
+        config: {
+            rating: 2.5,
+            style: {
+                fullStarColor: '#ed8a19',
+                emptyStarColor: '#737373',
+                starWidth: 30,
+                starHeight: 30
+            }
+        }
+    }
+  },
+  computed:{
+    number: function(){
+      return parseInt(this.test)
+    },
   }
 }
 </script>
