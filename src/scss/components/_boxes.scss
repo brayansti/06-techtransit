@@ -59,3 +59,26 @@
     @include fontSize(12);
   }
 }
+
+.searchBox{
+  margin-top: 10px;
+  position: relative;
+  &::after{
+    content: "";
+    width: 18px;
+    height: 18px;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    margin: auto;
+    background-image: url(./assets/icons/baseline_search_black_18dp.png);
+    position: absolute;
+  }
+  input{
+    width: 100%;
+    padding: 5px;
+    border: none;
+    padding-left: 35px;
+    border-bottom: 1px solid $gray-border;
+  }
+}

@@ -3,8 +3,10 @@
     <!--  -->
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <input v-model="newsSearch" @keyup="changeInput" type="text">
+        <div class="col-md-6">
+          <div class="searchBox">
+            <input placeholder="Buscar" v-model="newsSearch" @keyup="changeInput" type="text">
+          </div>
         </div>
       </div>
       <div class="row">
@@ -36,6 +38,14 @@
                       ${{item.objectID}}
                     </h2>
                   </div>
+                  <div>
+                    <vue-stars
+                      :name="item.objectID"
+                      :max="5"
+                      :value="item.points"
+                      :readonly="true"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -53,6 +63,7 @@
 
 <script>
 import axios from 'axios';
+  import { VueStars } from "vue-stars"
 import InfiniteLoading from 'vue-infinite-loading';
 
 const api = '//hn.algolia.com/api/v1/search_by_date?tags=story';
@@ -61,7 +72,8 @@ const api = '//hn.algolia.com/api/v1/search_by_date?tags=story';
 export default {
   name: 'app',
   components: {
-    InfiniteLoading
+    InfiniteLoading,
+    VueStars
   },
   data() {
     return {
