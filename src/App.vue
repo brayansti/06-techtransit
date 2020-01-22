@@ -1,14 +1,17 @@
 <template>
   <div id="app">
     <!--  -->
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="searchBox">
-            <input placeholder="Buscar" v-model="newsSearch" @keyup="changeInput" type="text">
-          </div>
-        </div>
+    <article class="bannerBox">
+      <div class="bannerBox__logo">
+        <img src="https://www.techtransit.com/img/logo_horzLongComp_white250x40.png" alt="Techtransit">
       </div>
+      <div class="bannerBox__image">
+      </div>
+      <div class="bannerBox__search searchBox">
+          <input placeholder="Search Here" v-model="newsSearch" @keyup="changeInput" type="text">
+      </div>
+    </article>
+    <div class="container mt40">
       <div class="row">
         <div v-for="(item, $index) in list" :key="$index" class="col-md-4">
           <a target="_blank" :href="item.url" class="itemBox">
