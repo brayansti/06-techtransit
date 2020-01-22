@@ -1,0 +1,60 @@
+.itemBox{
+  margin: 15px 0;
+  &__title{
+    color: $black;
+    font-weight: bold;
+    @include fontSize(14);
+  }
+  &__price{
+    color: $blue-3;
+    font-weight: bold;
+    @include fontSize(16);
+  }
+  &__description{
+    margin-top: 5px;
+    color: $gray-text;
+  }
+  &__container{
+    box-shadow: 0px 0px 0px 2px $gray-border;
+  }
+  &__divider{
+    padding: 0 20px;
+    &--top{
+      height: 50px;
+      display: flex;
+      position: relative;
+      align-items: center;
+      justify-content: flex-end;
+      background-color: $gray-bg;
+      box-shadow: 0px 0px 0px 2px $gray-border;
+    }
+    &--bottom{
+      padding-top: 40px;
+      padding-bottom: 20px;
+      height: 220px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+      >div{
+        width: 100%;
+      }
+    }
+  }
+  &__image{
+    top: 10px;
+    left: 20px;
+    position: absolute;
+    width: 60px;
+    img{
+      width: 100%;
+      display: block;
+    }
+  }
+  &__credits{
+    padding: 10px;
+    background: $white;
+    border-radius: 10px;
+    letter-spacing: .6px;
+    @include fontSize(12);
+  }
+}
